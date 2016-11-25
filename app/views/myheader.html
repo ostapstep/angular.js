@@ -1,0 +1,126 @@
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+	<div class="container-fluid">
+		    <!-- Бренд та перемикач згруповані для кращого відображення на мобільних пристроях -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			    <span class="sr-only">Toggle navigation</span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			</button>
+
+			<a href="#/">
+			    <img id="BrandImg" alt="Brand" src="images/Icon.png" height="50px" >
+			</a>
+		</div>
+
+		    <!-- Зібрано навігаційні лінки, форми, та інший вміст для переключення -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav">
+		        <li class="active"><a ng-href="#/about">Весільний крам</a></li>				    
+				<li><a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Новорічні подарунки <span class="caret"></span></a></li>
+				<li><a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Листівки </a></li>
+				<li><a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Кавові вироби </a></li>
+				<li><a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Немовлятам </a></li> 
+				<li><a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Прикраси з бісеру </a></li>
+				<li><a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Декупаж </a></li> 
+		    </ul>    
+
+		    <ul class="nav navbar-nav navbar-right">
+		        <li><a data-toggle="modal" data-target="#createNewUser"><span class="glyphicon glyphicon-user"></span><span> Створити профіль</span></a></li>  
+				<li><a data-toggle="modal" data-target="#AuthorizedUser"><span class="glyphicon glyphicon-log-in"></span><span> Увійти</span></a></li>
+		    </ul>
+
+		    <!-- Modal new user -->
+						<form class="modal fade" id="createNewUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+							    <div class="modal-content">
+								    <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <center>
+								        	<h4 class="modal-title" id="myModalLabel">Новий користувач</h4>
+								        </center>
+								    </div>
+
+								    <div class="modal-body">
+								    	<center>
+									        <div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="name" type="text" name="username" placeholder="Ваше ім'я" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
+												<div id="errorName" class="errorMessage text-danger"></div> 
+											</div>
+
+											<div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="surname" type="text" name="usersurname" placeholder="Ваше прізвище" data-pattern="[A-Za-zА-Яа-я]" maxlength="30" required>
+												<div id="errorSurname" class="errorMessage text-danger"></div>
+											</div>
+
+											<div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="pasword" type="pasword" name="userpasword" placeholder="Ваш пароль" required>
+												<div id="errorPasword" class="errorMessage text-danger"></div>
+											</div>											
+
+											<div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="email" type="email" name="useremail" placeholder="Ваша ел. пошта" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>	
+												<div id="errorEmail" class="errorMessage text-danger" ></div>
+											</div>
+
+											<div class="formBlocks has-feedback">
+												<input class="cheekingInformation form-control" id="phone" type="phone" name="userphone" placeholder="Ваша моб. номер"" data-pattern="\+38 \(\d{3}\) \d{3} \d{2} \d{2}" data-toggle="tooltip" data-placement="top" title="Перевірте формат введення номеру +38_(067)_676_76_76" required>
+												<div id="errorPhone" class="errorMessage text-danger" ></div>
+											</div>
+
+											<div class="formBlocks has-feedback">
+												<span class="titles">Вашa стать:</span>
+												</br>
+												<input  id="woman" type="radio" name="usersex" value="female" checked><span class="titles ">Жінка </span></input>
+												&nbsp; &nbsp; &nbsp; 			<!-- 		&nbsp;  - символ пробілу			-->
+												<input id="man" type="radio" name="usersex" value="male" class="" ><span class="titles "> Чоловік</span></input> 
+											</div>
+										</center>	
+									</div>
+
+									<div class="modal-footer">	    
+										<center>
+									    	<button type="button" class="btn btn-primary btn btn-block" style="width: 70%" ng-click="checkMyForm('createNewUser')">Зареєструватися</button>
+									    </center>
+									</div>
+							    </div>
+							</div>
+						</form>
+
+						<!-- Modal authorized user -->
+						<form class="modal fade" id="AuthorizedUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+							    <div class="modal-content">
+								    <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <center>
+								        	<h4 class="modal-title" id="myModalLabel">Авторизований користувач</h4>
+								        </center>
+								    </div>
+
+
+									<div class="modal-body">
+										<center>
+											<div class="formBlocks has-feedback">
+												Ваша електронна адреса: <br><input class="cheekingInformation form-control" id="AuthorizedUsereMail"  type="email" name="AuthorizedUserusername" placeholder="Введіть Вашy ел. пошту" data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+												<div id="errorAuthorizedUserMail" class="errorMessage text-danger"></div>
+											</div>
+
+											<div class="formBlocks has-feedback">
+												Ваш пароль: <br><input class="cheekingInformation form-control" id="AuthorizedUserpasword" type="pasword" name="AuthorizedUserpasword" placeholder="Ваш пароль"  required>
+												<div id="errorPaswordAuthorizedUser" class="errorMessage text-danger"></div>
+											</div>		
+										</center>								
+									</div>
+
+									<div class="modal-footer">	    
+									    <button type="button" class="btn btn-primary" ng-click="checkMyForm('AuthorizedUser')">Увійти</button>
+									</div>
+								</div>
+
+						</form>
+
+		</div>
+	</div>
+</nav>	

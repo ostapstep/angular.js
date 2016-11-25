@@ -1,0 +1,7 @@
+<p>This is the about PAGE! My name is {{ about.getName(about.name) }}</p>
+
+<profile-details her-name-is="about.students[0]"></profile-details>
+<profile-details her-name-is="about.students[1]"></profile-details>
+
+**********************************************<br/>
+<profile-details ng-repeat="student in about.students" her-name-is="student"></profile-details>

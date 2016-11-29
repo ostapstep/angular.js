@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('helloangularworldApp')
-  	.controller('MyheaderCtrl', function () {
-	  	function checkMyForm(){
-	  		
+  	.controller('MyheaderCtrl', function ($scope) {
+	  	$scope.checkMyForm(){	  		
 	  		console.log('hello');
 	  	}
     

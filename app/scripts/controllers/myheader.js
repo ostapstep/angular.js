@@ -1,9 +1,11 @@
 'use strict';
 
+alert('world!!!');
+
+
 angular.module('helloangularworldApp')
-  	.controller('MyheaderCtrl', function ($scope) {
-	  	$scope.checkMyForm(){	  		
-	  		console.log('hello');
-	  	}
-    
+  	.controller('MyHeaderCtrl', function($scope) {
+        $scope.checkMyForm = function() {
+          alert('Hello My Friend!!!');       
+        }
   	});
